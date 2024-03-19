@@ -166,11 +166,11 @@ def make_nextflow_command_params_string(params):
     param_list = []
     for key, value in params.items():
         if not value:
-            param_list.append(f"--{key}=")
+            param_list.append(f"-{key}")
         elif value[0] in "'\"": 
-            param_list.append(f"--{key}={value}")
+            param_list.append(f"-{key}={value}")
         else:
-            param_list.append(f"--{key}='{value}'")
+            param_list.append(f"-{key}='{value}'")
     return " ".join(param_list)
 
 
